@@ -26,7 +26,7 @@ namespace TestTaskBot
             client = new TelegramBotClient("1899731038:AAF31rQVRhdUwMGIfHzuiiKwCRB9KG9K6cg");
 
             client.OnMessage += BotOnMessageReceived;
-            client.OnInlineResultChosen += Client_OnInlineResultChosen;
+           // client.OnInlineResultChosen += Client_OnInlineResultChosen;
             client.OnMessageEdited += BotOnMessageReceived;
             client.StartReceiving();
 
@@ -35,13 +35,13 @@ namespace TestTaskBot
 
         }
 
-        private static void Client_OnInlineResultChosen(object sender, ChosenInlineResultEventArgs e)
-        {
+        //private static void Client_OnInlineResultChosen(object sender, ChosenInlineResultEventArgs e)
+        //{
 
-            e.ChosenInlineResult.ToString();
+        //    e.ChosenInlineResult.ToString();
 
 
-        }
+        //}
 
         private static async void BotOnMessageReceived(object sender, MessageEventArgs messageEventArgs)
         {
@@ -312,7 +312,8 @@ namespace TestTaskBot
                                     ExchangeTrade exchangeTrade = new ExchangeTrade();
 
 
-                                    ClientWebSocket socket = new ClientWebSocket();
+                                    //ClientWebSocket socket = new ClientWebSocket();
+                                    
 
                                     var __res = await exchangeAPI.GetTradesWebSocketAsync(async (i) =>
                                     {
